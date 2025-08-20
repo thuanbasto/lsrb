@@ -4,7 +4,7 @@
 /* Nếu đã có file Pricedown.ttf, thêm vào thư mục project và dùng đoạn sau: */
 @font-face {
     font-family: 'Pricedown';
-    src: url('Pricedown.ttf') format('truetype');
+    src: url('font/Pricedown.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,7 +34,7 @@ header {
     color: #27ae60;
     text-shadow: 2px 2px 8px #000, 0 0 10px #fff200;
     margin: 0;
-    font-family: 'Pricedown', 'Bungee', Arial, sans-serif;
+    font-family: 'Pricedown', 'Bungee', Arial, sans-serif !important;
 }
 
 main {
