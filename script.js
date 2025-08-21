@@ -2,6 +2,30 @@
 const aboutText = `Los Santos Rebel Boys (LSRB) là một băng đảng nổi tiếng tại thành phố Los Santos trong thế giới GTA V. Chúng tôi đại diện cho sự nổi loạn, tự do và tình anh em. LSRB luôn sẵn sàng đối mặt với mọi thử thách để bảo vệ danh dự và lãnh thổ của mình.`;
 document.getElementById('about-text').textContent = aboutText;
 
+// Lịch sử băng đảng cho popup
+const aboutHistory = `
+<p>Sự thành lập của Los Santos Rebel Boys gắn liền với 1 nhóm bạn 5 người sinh ra và lớn lên tại chính mảnh đất này: Slim, Thanh, Thuan, Jerry và Paul. Khởi đầu của cả nhóm rất đơn giản khi cả bọn chỉ là những chàng trai nổi khổ cùng nhau lớn lên ở con đường biển Melanoma với cùng chung niềm đam mê về xe motor hai bánh và một khát vọng về sự tự do.</p>
+<p>Mọi chuyện sẽ vẫn cứ êm đềm như thế nếu như trong 1 ngày định mệnh khi cả bọn đang rong ruổi trên trên phố biển Los Santos họ không chạm trán một thế lực máu mặt ở Los Santos là Black Hand Triad. Ngày hôm đó chỉ vì một xích mích nhỏ của Paul với một tên ShanChu trong hội tam hoàng mà dẫn đến một cuộc ẩu đả giữa hai bên.</p>
+<p>Dù vẫn chỉ là những đứa trẻ chỉ vừa 18 tuổi nhưng đây là những đứa trẻ có khả năng đấm nhau rất cừ, bọn họ đã chống trả quyết liệt dù đối phương đủ lớn và đã quen với mùi máu trên lưỡi dao. Nhưng “ĐOẢNG“, một tiếng súng đã nổ và cả khu vực nhìn về phía Paul, người mà bây giờ đã có một vết đạn trước ngực, Paul ra đi và người nổ súng chính là cái đầu rồng của Triad và có vẻ hắn không định dừng con số nạn nhân ở một người, hắn quay sang nhìn và chĩa súng về phía Slim, người giờ đây đã suy sụp sau khi chứng kiến sự ra đi của một người bạn, hắn trên sàn và không còn ý chí chiến đấu.</p>
+<p>Nhưng hắn đã không bóp cò, có thể hắn thấy việc si nhục bọn nhóc này khi chúng phải tự tay chọn người bạn của mình vui hơn là giết hết bọn nó hoặc chỉ đơn giản là hắn nghĩ bọn nhóc này không đáng để hắn tốn thêm một viên đạn. Nhưng hắn đã sai, sau khi cả bọn chôn cất Paul, những đứa trẻ này đã quyết định sẽ đòi món nợ của ngày hôm đó, cả gốc lẫn lãi. Họ bắt đầu với các vụ phức kích những chuyến hàng của Triad, và nhanh chóng cắt lãnh đạo cấp cao của tổ chức này.</p>
+<p>Trong 1 lần phục kích một cuộc giao dịch giữa Triad và Florencia 13, Jerry đã thành công làm gián đoạn cuộc giao dịch và khiến bọn chúng nghi ngờ lẫn nhau, Slim và Thanh thì truy sát những kẻ còn lại, nhóm Rebel đã thành công thiết lập cái bẫy đang chờ sẵn cho ShanChu và Paul cũng được Slim lẻn bắn đúng 1 viên vào đầu y. Cả nhóm đã trả được thù, nhưng cũng từ đó, LSRB chính thức bước chân vào thế giới ngầm Los Santos.</p>
+`;
+document.getElementById('about-history-text').innerHTML = aboutHistory;
+
+function showAboutPopup() {
+    document.getElementById('about-popup').style.display = 'flex';
+}
+function closeAboutPopup() {
+    document.getElementById('about-popup').style.display = 'none';
+}
+// Đóng popup khi click ra ngoài
+const aboutPopup = document.getElementById('about-popup');
+if (aboutPopup) {
+    aboutPopup.addEventListener('click', function(e) {
+        if (e.target === aboutPopup) closeAboutPopup();
+    });
+}
+
 // Danh sách thành viên mới
 const members = [
     {
@@ -81,40 +105,105 @@ function showMemberPopup(idx) {
     popup.style.display = 'flex';
 }
 
-// Media mẫu (ảnh và video)
-const media = [
+// Media mẫu (ảnh và video, có brief)
+const images = [
     {
-        type: 'img',
-        src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-        alt: 'LSRB hoạt động đêm'
+        src: '/image/team.png',
+        alt: 'LSRB hoạt động đêm',
+        brief: 'Đêm Los Santos - nơi mọi phi vụ bắt đầu.'
     },
     {
-        type: 'img',
         src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
-        alt: 'LSRB tụ họp'
+        alt: 'LSRB tụ họp',
+        brief: 'Tụ họp anh em trước mỗi nhiệm vụ.'
+    }
+];
+const videos = [
+    {
+        src: 'https://www.youtube.com/watch?v=pWm84ieQfSg',
+        alt: 'Video hoạt động LSRB',
+        brief: 'Armed Robbery.'
     },
     {
-        type: 'video',
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        alt: 'Video hoạt động LSRB'
+        src: 'https://www.youtube.com/watch?v=8nkvOuIOKbo',
+        alt: 'Video hoạt động LSRB',
+        brief: 'An easy way to make money.'
     }
 ];
 
-const mediaGallery = document.getElementById('media-gallery');
-media.forEach(item => {
-    const mediaDiv = document.createElement('div');
-    mediaDiv.className = 'media-item';
-    if (item.type === 'img') {
-        const img = document.createElement('img');
-        img.src = item.src;
-        img.alt = item.alt;
-        mediaDiv.appendChild(img);
-    } else if (item.type === 'video') {
-        const video = document.createElement('video');
-        video.src = item.src;
-        video.controls = true;
-        video.alt = item.alt;
-        mediaDiv.appendChild(video);
+function isYouTubeUrl(url) {
+    return /(?:youtube\.com|youtu\.be)/.test(url);
+}
+function getYouTubeId(url) {
+    try {
+        const ytShort = url.match(/youtu\.be\/([\w-]{6,})/);
+        if (ytShort) return ytShort[1];
+        const ytEmbed = url.match(/youtube\.com\/embed\/([\w-]{6,})/);
+        if (ytEmbed) return ytEmbed[1];
+        const u = new URL(url);
+        return u.searchParams.get('v');
+    } catch (e) {
+        return '';
     }
-    mediaGallery.appendChild(mediaDiv);
-});
+}
+
+function renderMediaGallery() {
+    const imgGallery = document.getElementById('media-image-gallery');
+    const vidGallery = document.getElementById('media-video-gallery');
+    imgGallery.innerHTML = '';
+    vidGallery.innerHTML = '';
+    images.forEach((item) => {
+        const div = document.createElement('div');
+        div.className = 'media-item';
+        div.innerHTML = `<img src="${item.src}" alt="${item.alt}"><div class="media-brief">${item.brief}</div>`;
+        div.addEventListener('click', () => showMediaPopup('img', item));
+        imgGallery.appendChild(div);
+    });
+    videos.forEach((item) => {
+        const div = document.createElement('div');
+        div.className = 'media-item';
+        if (isYouTubeUrl(item.src)) {
+            const id = getYouTubeId(item.src);
+            const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+            div.innerHTML = `<img src="${thumb}" alt="${item.alt}"><div class="media-brief">${item.brief}</div><div class="play-badge">▶</div>`;
+            div.addEventListener('click', () => showMediaPopup('youtube', item));
+        } else {
+            div.innerHTML = `<video src="${item.src}" alt="${item.alt}" muted></video><div class="media-brief">${item.brief}</div>`;
+            div.addEventListener('click', () => showMediaPopup('video', item));
+        }
+        vidGallery.appendChild(div);
+    });
+}
+renderMediaGallery();
+
+function showMediaPopup(type, item) {
+    const popup = document.getElementById('media-popup');
+    const body = document.getElementById('media-popup-body');
+    const brief = document.getElementById('media-popup-brief');
+    if (type === 'img') {
+        body.innerHTML = `<img src="${item.src}" alt="${item.alt}">`;
+    } else if (type === 'youtube') {
+        const id = getYouTubeId(item.src);
+        const src = id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` : '';
+        body.innerHTML = `<iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    } else if (type === 'video') {
+        body.innerHTML = `<video src="${item.src}" alt="${item.alt}" controls autoplay></video>`;
+    }
+    brief.textContent = item.brief;
+    popup.style.display = 'flex';
+}
+function closeMediaPopup() {
+    document.getElementById('media-popup').style.display = 'none';
+    document.getElementById('media-popup-body').innerHTML = '';
+}
+// Đóng popup media khi click ra ngoài
+const mediaPopup = document.getElementById('media-popup');
+if (mediaPopup) {
+    mediaPopup.addEventListener('click', function(e) {
+        if (e.target === mediaPopup) closeMediaPopup();
+    });
+}
+
+// Đặc điểm nhận dạng băng đảng (identity section)
+const identityText = `Làm thế nào để nhận biết đó là một người tới LS-RB? Hình xăm sau lưng bọn họ chính là chìa khoá.`;
+document.querySelector('.identity-text p').textContent = identityText;

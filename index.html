@@ -17,20 +17,61 @@
     </header>
     <main>
         <section id="about">
-            <h2>Giới thiệu băng đảng</h2>
-            <p id="about-text"></p>
+            <h2>GIỚI THIỆU BĂNG ĐẢNG</h2>
+            <div class="about-flex">
+                <div class="about-logo-wrap">
+                    <img src="image/logo-gif.gif" alt="LSRB Logo" class="about-logo">
+                </div>
+                <div class="about-content">
+                    <p id="about-text"></p>
+                    <button class="about-more-btn" onclick="showAboutPopup()">Xem thêm</button>
+                </div>
+            </div>
         </section>
+        <section id="identity">
+            <h2>ĐẶC ĐIỂM NHẬN DẠNG</h2>
+            <div class="identity-text">
+                <p></p>
+            </div>
+            <div class="identity-images">
+                <img src="image/man.png" alt="Logo LSRB" class="identity-img">
+                <img src="image/man.png" alt="Tattoo LSRB" class="identity-img">
+            </div>
+        </section>
+        <div id="about-popup" class="about-popup">
+            <div class="about-popup-content">
+                <span class="about-popup-close" onclick="closeAboutPopup()">&times;</span>
+                <h3>Lịch sử băng đảng LSRB</h3>
+                <p id="about-history-text"></p>
+            </div>
+        </div>
         <section id="members">
             <h2>Thành viên</h2>
             <div id="member-list"></div>
         </section>
         <section id="media">
             <h2>Hoạt động của băng đảng</h2>
-            <div id="media-gallery"></div>
+            <div class="media-group">
+                <div class="media-block">
+                    <h3>Hình ảnh</h3>
+                    <div id="media-image-gallery" class="media-gallery"></div>
+                </div>
+                <div class="media-block">
+                    <h3>Video</h3>
+                    <div id="media-video-gallery" class="media-gallery"></div>
+                </div>
+            </div>
         </section>
+        <div id="media-popup" class="media-popup">
+            <div class="media-popup-content">
+                <span class="media-popup-close" onclick="closeMediaPopup()">&times;</span>
+                <div id="media-popup-body"></div>
+                <div id="media-popup-brief" class="media-popup-brief"></div>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Los Santos Rebel Boys</p>
+        <p>&copy; 2025 Los Santos Rebel Boys</p>
     </footer>
 </body>
 </html>
