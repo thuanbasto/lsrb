@@ -10,10 +10,12 @@
 }
 
 body {
-	background:
-		linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
-		url('image/logo-removebg-preview.png') center center / 520px auto no-repeat fixed,
-		linear-gradient(135deg, #232526 0%, #414345 100%);
+	background-color: #0b0b0b;
+	background-image: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('image/background5.jpg');
+	background-position: center center, center center;
+	background-repeat: no-repeat, no-repeat;
+	background-size: cover, cover;
+	background-attachment: fixed, fixed;
 	color: #fff;
 	font-family: 'Roboto', Arial, sans-serif;
 	margin: 0;
