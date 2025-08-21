@@ -151,17 +151,31 @@ h2 {
     z-index: 1;
     pointer-events: none;
 }
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     #member-list {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         max-width: 98vw;
+        align-items: center; /* center cards */
     }
     .member-card.gta3 {
         height: 260px;
+        width: 100px;
+        max-width: 520px; /* prevent too wide */
+    }
+    /* Ensure member image fills the card on mobile */
+    .member-card.gta3 .member-img-wrap {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%;
+        height: 100%;
     }
     .member-card.gta3 img {
-        width: 100px;
-        margin-bottom: 8px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 0;
+        display: block;
     }
 }
 
@@ -453,7 +467,7 @@ footer {
     padding: 16px 0;
 }
 .site-logo {
-    height: 90px;
+    height: 170px;
     width: auto;
     display: block;
 }
@@ -465,17 +479,17 @@ footer {
     margin: 0;
     font-family: 'Pricedown', 'Bungee', Arial, sans-serif !important;
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .site-logo-title {
         flex-direction: column;
         gap: 12px;
         padding: 8px 0;
     }
     .site-logo {
-        height: 56px;
+        height: 200px;
     }
     .gta-title {
-        font-size: 2.2rem;
+        font-size: 3.2rem;
     }
 }
 
@@ -595,7 +609,7 @@ footer {
         justify-content: flex-start;
     }
     .about-logo {
-        width: 150px;
+        width: 100%;
     }
     .about-content {
         width: 100%;
