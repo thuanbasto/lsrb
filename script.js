@@ -29,31 +29,31 @@ if (aboutPopup) {
 // Danh sách thành viên mới
 const members = [
     {
-        name: 'Niko Bellic',
+        name: 'Thuan Scu',
         role: 'Thành viên',
         img: 'image/Niko Bellic.jfif',
-        desc: 'Niko Bellic là một cựu binh đến từ Đông Âu, nổi tiếng với sự lạnh lùng và quyết đoán trong thế giới ngầm Liberty City.',
+        desc: 'Thuan Scu là một cựu binh đến từ Đông Âu, nổi tiếng với sự lạnh lùng và quyết đoán trong thế giới ngầm Liberty City.',
         color: '#2ecc40' // xanh lá
     },
     {
-        name: 'Michael De Santa',
+        name: 'Thai Thanh',
         role: 'Thủ lĩnh',
         img: 'image/Michael.jfif',
-        desc: 'Michael là một cựu tội phạm chuyên nghiệp, sống cuộc đời giàu sang nhưng đầy mâu thuẫn nội tâm. Anh là người lên kế hoạch cho các phi vụ lớn.',
+        desc: 'Thai Thanh là một cựu tội phạm chuyên nghiệp, sống cuộc đời giàu sang nhưng đầy mâu thuẫn nội tâm. Anh là người lên kế hoạch cho các phi vụ lớn.',
         color: '#0099ff' // xanh dương
     },
     {
-        name: 'Tommy Vercetti',
+        name: 'Slim Grimes',
         role: 'Ông trùm',
         img: 'image/Tommy Vercetti.jfif',
-        desc: 'Tommy Vercetti là ông trùm khét tiếng của Vice City, thông minh, tàn nhẫn và đầy tham vọng.',
+        desc: 'Slim Grimes là ông trùm khét tiếng của Vice City, thông minh, tàn nhẫn và đầy tham vọng.',
         color: '#ffe033' // vàng
     },
     {
-        name: 'Digital',
+        name: 'Jerry Nguyen',
         role: 'Hacker',
         img: 'image/Digital.jfif',
-        desc: 'Digital là chuyên gia công nghệ, hacker tài ba, luôn hỗ trợ nhóm trong các phi vụ hiện đại.',
+        desc: 'Jerry Nguyen là chuyên gia công nghệ, hacker tài ba, luôn hỗ trợ nhóm trong các phi vụ hiện đại.',
         color: '#a259f7' // tím
     }
 ];
