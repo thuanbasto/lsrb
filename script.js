@@ -264,11 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Hàm mua item - mở Discord với text có sẵn
-function buyItem(itemName, price) {
+function buyItem() {
     // Thay đổi USER_ID thành ID Discord user thực tế
     const discordUserId = '357516312089722882';
-    
-    const message = `Xin chào! Tôi muốn mua ${itemName} với giá ${price} từ Black Market của LSRB.`;
     
     const discordLink = `https://discord.com/users/${discordUserId}`;
     
