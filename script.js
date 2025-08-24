@@ -44,14 +44,14 @@ const members = [
     },
     {
         name: 'Slim Grimes',
-        role: 'Ông trùm',
+        role: 'Thành viên',
         img: 'image/Tommy Vercetti.jfif',
         desc: 'Slim Grimes là ông trùm khét tiếng của Vice City, thông minh, tàn nhẫn và đầy tham vọng.',
         color: '#ffe033' // vàng
     },
     {
         name: 'Jerry Nguyen',
-        role: 'Hacker',
+        role: 'Thành viên',
         img: 'image/Digital.jfif',
         desc: 'Jerry Nguyen là chuyên gia công nghệ, hacker tài ba, luôn hỗ trợ nhóm trong các phi vụ hiện đại.',
         color: '#a259f7' // tím
@@ -63,7 +63,7 @@ memberList.innerHTML = '';
 members.forEach((member, idx) => {
     const card = document.createElement('div');
     card.className = 'member-card gta3';
-    card.style.background = member.color;
+    //card.style.background = member.color;
     card.innerHTML = `
         <div class="member-img-wrap">
             <img src="${member.img}" alt="${member.name}">
@@ -113,9 +113,9 @@ const images = [
         brief: 'Đêm Los Santos - nơi mọi phi vụ bắt đầu.'
     },
     {
-        src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
+        src: '/image/team2.png',
         alt: 'LSRB tụ họp',
-        brief: 'Tụ họp anh em trước mỗi nhiệm vụ.'
+        brief: 'Thành công đưa 2 chiếc xe Burrito về điểm an toàn.'
     }
 ];
 const videos = [
@@ -128,6 +128,11 @@ const videos = [
         src: 'https://www.youtube.com/watch?v=8nkvOuIOKbo',
         alt: 'Video hoạt động LSRB',
         brief: 'An easy way to make money.'
+    },
+    {
+        src: 'https://www.youtube.com/watch?v=fm6PRUOrNZ0',
+        alt: 'Video hoạt động LSRB',
+        brief: 'Hộ tống xe vũ khí.'
     }
 ];
 

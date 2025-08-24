@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap');
 
 /* Nếu đã có file Pricedown.ttf, thêm vào thư mục project và dùng đoạn sau: */
 @font-face {
@@ -10,12 +11,16 @@
 }
 
 body {
-	background-color: #0b0b0b;
-	background-image: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('image/background5.jpg');
-	background-position: center center, center center;
-	background-repeat: no-repeat, no-repeat;
-	background-size: cover, cover;
-	background-attachment: fixed, fixed;
+	background-color: #0a0a0a;
+	background-image: 
+		url('image/logo-removebg.png'),
+		linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #2a0a2a 50%, #e81c5a 75%, #0a0a0a 100%),
+		radial-gradient(circle at 20% 80%, rgba(232,28,90,0.2) 0%, transparent 50%),
+		radial-gradient(circle at 80% 20%, rgba(232,28,90,0.15) 0%, transparent 50%);
+	background-position: center center, center center, center center, center center;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-size: 600px auto, cover, cover, cover;
+	background-attachment: fixed, fixed, fixed, fixed;
 	color: #fff;
 	font-family: 'Roboto', Arial, sans-serif;
 	margin: 0;
@@ -23,23 +28,14 @@ body {
 }
 
 header {
-    background: rgba(0,0,0,0.8);
-    padding: 32px 0 16px 0;
+    background: rgba(0,0,0,1);
+    padding: 1px 1px 1px 1px;
     text-align: center;
-    border-bottom: 4px solid #27ae60;
+    border-bottom: 4px solid #e81c5a;
 }
 
 .gta-title, h2 {
     font-family: 'Bungee', 'Russo One', Arial, sans-serif;
-}
-
-.gta-title {
-    font-size: 4rem;
-    letter-spacing: 2px;
-    color: #27ae60;
-    text-shadow: 2px 2px 8px #000, 0 0 10px #fff200;
-    margin: 0;
-    font-family: 'Pricedown', 'Bungee', Arial, sans-serif !important;
 }
 
 main {
@@ -57,7 +53,7 @@ section {
 }
 
 h2 {
-    color: #fff200;
+    color: #e81c5a;
     margin-top: 0;
     font-size: 2rem;
     text-shadow: 1px 1px 4px #000;
@@ -68,6 +64,8 @@ h2 {
     line-height: 1.6;
     margin: 0;
     flex: 1;
+    font-family: 'Fira Sans', 'Roboto', Arial, sans-serif;
+    font-weight: bold;
 }
 
 #member-list {
@@ -75,7 +73,7 @@ h2 {
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
-    gap: 0;
+    gap: 15px;
     margin: 0 auto;
     max-width: 900px;
 }
@@ -85,7 +83,8 @@ h2 {
     margin: 0;
     border-radius: 0;
     box-shadow: none;
-    border: none;
+    border: 1px solid hsla(0,0%,100%,.1);
+    border-radius: 13px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -98,11 +97,10 @@ h2 {
     cursor: pointer;
     transition: transform 0.15s;
 }
-.member-card.gta3:nth-child(1) { background: #2ecc40; }
-.member-card.gta3:nth-child(2) { background: #0099ff; }
-.member-card.gta3:nth-child(3) { background: #ffe033; }
+
 .member-card.gta3:hover {
     transform: scale(1.04);
+    border: 1px solid #e81c5a;
     z-index: 2;
 }
 .member-card.gta3 .member-img-wrap {
@@ -142,11 +140,13 @@ h2 {
     font-weight: bold;
     letter-spacing: 1px;
     font-family: 'Pricedown', 'Bungee', Arial, sans-serif;
+    color: #e81c5a;
 }
 .member-card.gta3 p {
     bottom: 1em;
     font-size: 1.1rem;
     font-weight: 500;
+    font-family: 'Fira Sans', 'Bungee', Arial, sans-serif;
 }
 .member-card.gta3::after {
     content: '';
@@ -202,7 +202,7 @@ h2 {
     align-items: center;
 }
 .media-block h3 {
-    color: #fff200;
+    color: #e81c5a;
     font-size: 1.3rem;
     margin-bottom: 18px;
     font-family: 'Bungee', 'Russo One', Arial, sans-serif;
@@ -238,7 +238,8 @@ h2 {
     position: absolute;
     left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.7);
-    color: #fff200;
+    color: #fff;
+    font-weight: bold;
     font-size: 1.05rem;
     padding: 10px 12px;
     text-align: center;
@@ -315,7 +316,7 @@ h2 {
     object-fit: contain;
 }
 .media-popup-brief {
-    color: #fff200;
+    color: #e81c5a;
     font-size: 1.15rem;
     text-align: center;
     margin-top: 0;
@@ -366,9 +367,9 @@ footer {
     text-align: center;
     padding: 16px 0;
     background: rgba(0,0,0,0.7);
-    color: #fff200;
+    color: #e81c5a;
     font-size: 1rem;
-    border-top: 2px solid #27ae60;
+    border-top: 2px solid #e81c5a;
 }
 
 /* Popup thành viên GTA V */
@@ -430,7 +431,7 @@ footer {
 }
 .popup-role {
     font-size: 1.2rem;
-    color: #fff200;
+    color: #e81c5a;
     margin: 0 0 12px 0;
     font-weight: bold;
 }
@@ -469,11 +470,15 @@ footer {
 }
 
 .site-logo-title {
+    background-image: url("image/background-title.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 32px;
-    padding: 16px 0;
+    padding: 32px 0;
 }
 .site-logo {
     height: 170px;
@@ -483,11 +488,12 @@ footer {
 .gta-title {
     font-size: 4.5rem;
     letter-spacing: 2px;
-    color: #27ae60;
-    text-shadow: 2px 2px 8px #000, 0 0 10px #fff200;
+    color: #e4b26d;
+    text-shadow: 2px 2px 8px #000, 0 0 10px #000000;
     margin: 0;
     font-family: 'Pricedown', 'Bungee', Arial, sans-serif !important;
 }
+
 @media (max-width: 1000px) {
     .site-logo-title {
         flex-direction: column;
@@ -538,9 +544,9 @@ footer {
     margin: 0;
 }
 .about-more-btn {
-    background: #27ae60;
-    color: #fff200;
-    border: none;
+    background: none;
+    color: #e81c5a;
+    border: 1px solid;
     border-radius: 8px;
     padding: 10px 22px;
     font-size: 1.1rem;
@@ -552,7 +558,7 @@ footer {
     margin-top: 8px;
 }
 .about-more-btn:hover {
-    background: #219150;
+    background: #e81c5a;
     color: #fff;
 }
 /* Popup lịch sử băng đảng */
@@ -582,7 +588,7 @@ footer {
     align-items: center;
 }
 .about-popup-content h3 {
-    color: #fff200;
+    color: #e81c5a;
     margin-top: 0;
     font-size: 2rem;
     text-align: center;
@@ -635,7 +641,7 @@ footer {
     box-shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
 #identity h2 {
-    color: #fff200;
+    color: #e81c5a;
     margin-top: 0;
     font-size: 2rem;
     text-shadow: 1px 1px 4px #000;
@@ -645,6 +651,7 @@ footer {
     font-size: 1.15rem;
     margin: 0 0 24px 0;
     color: #fff;
+    font-weight: bold;
     text-align: center;
 }
 .identity-images {
@@ -661,7 +668,7 @@ footer {
     border-radius: 18px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.18);
     background: #fff;
-    border: 3px solid #27ae60;
+    border: 3px solid #e81c5a;
 }
 @media (max-width: 700px) {
     .identity-images {
