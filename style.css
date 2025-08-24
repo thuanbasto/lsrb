@@ -365,11 +365,270 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 16px 0;
+    padding: 16px 0 50px 0;
     background: rgba(0,0,0,0.7);
     color: #e81c5a;
     font-size: 1rem;
     border-top: 2px solid #e81c5a;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.footer-content > p {
+    margin-bottom: 0;
+}
+
+.mysterious-hint {
+    text-align: center;
+    margin: 0;
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(232,28,90,0.3);
+    max-width: 500px;
+}
+.mysterious-hint p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: #e4b26d;
+    font-style: italic;
+    text-shadow: 0 0 6px rgba(228,178,109,0.4);
+    animation: subtleGlow 3s ease-in-out infinite alternate;
+}
+@keyframes subtleGlow {
+    from { 
+        text-shadow: 0 0 6px rgba(228,178,109,0.4);
+        opacity: 0.8;
+    }
+    to { 
+        text-shadow: 0 0 10px rgba(228,178,109,0.7), 0 0 15px rgba(228,178,109,0.3);
+        opacity: 1;
+    }
+}
+.mysterious-hint p:first-child {
+    color: #ff6b6b;
+    animation-delay: 0s;
+}
+.mysterious-hint p:last-child {
+    color: #4ecdc4;
+    animation-delay: 1.5s;
+}
+.password-section {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.password-input {
+    padding: 8px 12px;
+    border: 1px solid #e81c5a;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    width: 200px;
+}
+.password-input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+.password-btn {
+    padding: 8px 16px;
+    background: #e81c5a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+.password-btn:hover {
+    background: #c41a6b;
+}
+.hidden-section {
+    display: none;
+    background: rgba(34, 40, 49, 0.95);
+    border-radius: 16px;
+    margin: 32px auto;
+    padding: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.black-market-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-family: 'Fira Sans', 'Roboto', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.black-market-layout {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.black-market-tabs {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tab-item {
+    background: rgba(0,0,0,0.6);
+    border: 2px solid rgba(232,28,90,0.5);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+
+.tab-item:hover {
+    border-color: #e81c5a;
+    background: rgba(232,28,90,0.1);
+    transform: translateY(-2px);
+}
+
+.tab-item.active {
+    border-color: #e81c5a;
+    background: rgba(232,28,90,0.2);
+    box-shadow: 0 0 20px rgba(232,28,90,0.3);
+}
+
+.tab-item span:first-child {
+    font-size: 2rem;
+}
+
+.tab-item span:last-child {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e81c5a;
+}
+
+.black-market-content {
+    flex: 1;
+    background: rgba(0,0,0,0.4);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(232,28,90,0.3);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    color: #e81c5a;
+    font-size: 1.8rem;
+    margin: 0 0 16px 0;
+    font-family: 'Bungee', Arial, sans-serif;
+    text-align: center;
+}
+
+.tab-content p {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    text-align: center;
+    font-family: 'Fira Sans', 'Roboto', Arial, sans-serif;
+}
+
+.weapon-list, .service-list, .ammo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.weapon-item, .service-item, .ammo-item {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(232,28,90,0.3);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s;
+}
+
+.weapon-item:hover, .service-item:hover, .ammo-item:hover {
+    border-color: #e81c5a;
+    background: rgba(232,28,90,0.1);
+    transform: translateX(5px);
+}
+
+.buy-btn {
+    background: #e81c5a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(232,28,90,0.3);
+}
+
+.buy-btn:hover {
+    background: #c41a6b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232,28,90,0.5);
+}
+
+.buy-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(232,28,90,0.4);
+}
+
+.weapon-icon, .service-icon, .ammo-icon {
+    font-size: 1.5rem;
+    flex: 0 0 auto;
+}
+
+.weapon-name, .service-name, .ammo-name {
+    flex: 1;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Fira Sans', 'Roboto', Arial, sans-serif;
+}
+
+.weapon-price, .service-price, .ammo-price {
+    color: #e4b26d;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Bungee', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .black-market-layout {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .black-market-tabs {
+        flex: none;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .tab-item {
+        flex: 1;
+        max-width: 150px;
+    }
 }
 
 /* Popup thành viên GTA V */
@@ -540,11 +799,7 @@ footer {
     align-items: flex-start;
     gap: 18px;
 }
-#about-text {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0;
-}
+
 .about-more-btn {
     background: none;
     color: #e81c5a;
@@ -682,4 +937,114 @@ footer {
         width: 160px;
         height: 160px;
     }
+}
+
+.black-market-popup {
+    display: none;
+    position: fixed;
+    z-index: 5000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    animation: fadeInDark 0.5s ease-in-out;
+}
+@keyframes fadeInDark {
+    from { 
+        opacity: 0; 
+        background: rgba(0,0,0,0);
+    }
+    to { 
+        opacity: 1; 
+        background: rgba(0,0,0,0.9);
+    }
+}
+.black-market-popup-content {
+    background: linear-gradient(135deg, #1a0a1a 0%, #2a0a2a 100%);
+    border: 2px solid #e81c5a;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(232,28,90,0.6), inset 0 0 20px rgba(0,0,0,0.8);
+    padding: 40px 30px;
+    text-align: center;
+    color: #fff;
+    max-width: 500px;
+    width: 90vw;
+    position: relative;
+    animation: slideInUp 0.5s ease-out;
+}
+@keyframes slideInUp {
+    from { 
+        transform: translateY(50px); 
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+.popup-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.black-market-popup-content h3 {
+    color: #e81c5a;
+    font-size: 1.8rem;
+    margin: 0 0 16px 0;
+    font-family: 'Bungee', Arial, sans-serif;
+    text-shadow: 0 0 10px rgba(232,28,90,0.5);
+}
+.black-market-popup-content p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+.mysterious-text {
+    margin: 20px 0;
+    padding: 16px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 12px;
+    border-left: 3px solid #e81c5a;
+}
+.mysterious-text p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #e4b26d;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(228,178,109,0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 8px rgba(228,178,109,0.3); }
+    to { text-shadow: 0 0 12px rgba(228,178,109,0.6), 0 0 20px rgba(228,178,109,0.4); }
+}
+.mysterious-text p:first-child {
+    color: #ff6b6b;
+    animation-delay: 0s;
+}
+.mysterious-text p:last-child {
+    color: #4ecdc4;
+    animation-delay: 1s;
+}
+.popup-close-btn {
+    background: #e81c5a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(232,28,90,0.4);
+}
+.popup-close-btn:hover {
+    background: #c41a6b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(232,28,90,0.6);
 }

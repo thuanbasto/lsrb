@@ -69,9 +69,138 @@
                 <div id="media-popup-brief" class="media-popup-brief"></div>
             </div>
         </div>
+        <section id="black-market" class="hidden-section" style="display: none">
+            <h2>BLACK MARKET</h2>
+            <div class="black-market-content">
+                <p>Chào mừng bạn đến với Black Market của LSRB. Đây là nơi giao dịch những món hàng đặc biệt.</p>
+            </div>
+            <div class="black-market-layout">
+                <div class="black-market-tabs">
+                    <div class="tab-item active" data-tab="weapons">
+                        <span>🔫</span>
+                        <span>Vũ khí</span>
+                    </div>
+                    <div class="tab-item" data-tab="ammo">
+                        <span>💥</span>
+                        <span>Đạn</span>
+                    </div>
+                    <div class="tab-item" data-tab="assassination">
+                        <span>💀</span>
+                        <span>Giết người</span>
+                    </div>
+                </div>
+                <div class="black-market-content">
+                    <div id="weapons-content" class="tab-content active">
+                        <h3>🔫 Vũ khí</h3>
+                        <p>Chào mừng bạn đến với kho vũ khí của LSRB. Chúng tôi cung cấp những loại vũ khí mạnh nhất và hiện đại nhất.</p>
+                        <div class="weapon-list">
+                            <div class="weapon-item">
+                                <img src="image/pistol.png" alt="Pistol" style="width: 25px; height: 25px;">
+                                <span class="weapon-name">Pistol</span>
+                                <span class="weapon-price">$15,000</span>
+                                <button class="buy-btn" onclick="buyItem('Pistol', '$15,000')">Mua</button>
+                            </div>
+                            <div class="weapon-item">
+                                <img src="image/smg.png" alt="SMG" style="width: 25px; height: 25px;">
+                                <span class="weapon-name">SMG</span>
+                                <span class="weapon-price">$20,000</span>
+                                <button class="buy-btn" onclick="buyItem('SMG', '$20,000')">Mua</button>
+                            </div>
+                            <div class="weapon-item">
+                                <img src="image/ak-47.png" alt="AK-47" style="width: 25px; height: 25px;">
+                                <span class="weapon-name">AK-47</span>
+                                <span class="weapon-price">$190,000</span>
+                                <button class="buy-btn" onclick="buyItem('AK-47', '$190,000')">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ammo-content" class="tab-content">
+                        <h3>💥 Đạn</h3>
+                        <p>Đạn chất lượng cao cho mọi loại vũ khí. Đảm bảo độ chính xác và sát thương tối đa.</p>
+                        <div class="ammo-list">
+                            <div class="ammo-item">
+                                <img src="image/bullet.png" alt="bullet" style="width: 25px; height: 25px;">
+                                <span class="ammo-name">Đạn pistol</span>
+                                <span class="ammo-price">$15,000/100 viên</span>
+                                <button class="buy-btn" onclick="buyItem('Đạn pistol', '$15,000/100 viên')">Mua</button>
+                            </div>
+                            <div class="ammo-item">
+                                <img src="image/bullet.png" alt="bullet" style="width: 25px; height: 25px;">
+                                <span class="ammo-name">Đạn SMG</span>
+                                <span class="ammo-price">$20,000/100 viên</span>
+                                <button class="buy-btn" onclick="buyItem('Đạn SMG', '$20,000/100 viên')">Mua</button>
+                            </div>
+                            <div class="ammo-item">
+                                <img src="image/bullet.png" alt="bullet" style="width: 25px; height: 25px;">
+                                <span class="ammo-name">Đạn rifle</span>
+                                <span class="ammo-price">$17,000/100 viên</span>
+                                <button class="buy-btn" onclick="buyItem('Đạn rifle', '$17,000/100 viên')">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="assassination-content" class="tab-content">
+                        <h3>💀 Giết người</h3>
+                        <p>Dịch vụ chuyên nghiệp với giá cả phải chăng. Chúng tôi đảm bảo sự riêng tư và hiệu quả tuyệt đối.</p>
+                        <div class="service-list">
+                            <div class="service-item">
+                                <span class="service-icon">👦</span>
+                                <span class="service-name">Giết dân thường</span>
+                                <span class="service-price">$10,000</span>
+                                <button class="buy-btn" onclick="buyItem('Giết dân thường', '$10,000')">Mua</button>
+                            </div>
+                            <div class="service-item">
+                                <img src="image/gangster.png" alt="gangster" style="width: 25px; height: 25px;">
+                                <span class="service-name">Giết gangster</span>
+                                <span class="service-price">$20,000</span>
+                                <button class="buy-btn" onclick="buyItem('Giết gangster', '$20,000')">Mua</button>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">👨‍⚕️</span>
+                                <span class="service-name">Giết bác sĩ</span>
+                                <span class="service-price">$20,000</span>
+                                <button class="buy-btn" onclick="buyItem('Giết bác sĩ', '$20,000')">Mua</button>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">👮</span>
+                                <span class="service-name">Giết cảnh sát</span>
+                                <span class="service-price">$30,000</span>
+                                <button class="buy-btn" onclick="buyItem('Giết cảnh sát', '$30,000')">Mua</button>
+                            </div>
+                            <div class="service-item">
+                                <img src="image/admin.png" alt="admin" style="width: 25px; height: 25px;">
+                                <span class="service-name">Giết admin</span>
+                                <span class="service-price">$9,999,999</span>
+                                <button class="buy-btn" onclick="buyItem('Giết admin', '$9,999,999')">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="black-market-popup" class="black-market-popup" style="display: none">
+            <div class="black-market-popup-content">
+                <div class="popup-icon">👹</div>
+                <h3>CHÀO MỪNG ĐẾN VỚI BLACK MARKET</h3>
+                <p>Bạn đã được chấp nhận vào thế giới ngầm của LSRB.</p>
+                <div class="mysterious-text">
+                    <p>🔒 <em>"Những gì bạn sắp thấy sẽ thay đổi cách nhìn về Los Santos mãi mãi..."</em></p>
+                    <p>💀 <em>"Có những bí mật mà chỉ những kẻ dám liều mạng mới biết được..."</em></p>
+                </div>
+                <button onclick="closeBlackMarketPopup()" class="popup-close-btn">Tiếp tục</button>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2025 Los Santos Rebel Boys</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Los Santos Rebel Boys</p>
+            <div class="mysterious-hint">
+                <p>🔐 <em>"Có một cánh cửa bí mật đang chờ bạn khám phá..."</em></p>
+            </div>
+            <div class="password-section">
+                <input type="text" id="password-input" placeholder="Nhập mật mã..." class="password-input">
+                <button onclick="checkPassword()" class="password-btn">Xác nhận</button>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

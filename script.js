@@ -212,3 +212,65 @@ if (mediaPopup) {
 // Đặc điểm nhận dạng băng đảng (identity section)
 const identityText = `Làm thế nào để nhận biết đó là một người tới LS-RB? Hình xăm sau lưng bọn họ chính là chìa khoá.`;
 document.querySelector('.identity-text p').textContent = identityText;
+
+// Kiểm tra mật mã Black Market
+function checkPassword() {
+    const password = document.getElementById('password-input').value;
+    const blackMarketSection = document.getElementById('black-market');
+    
+    if (password === 'lsrb-blackmarket') {
+        blackMarketSection.style.display = 'block';
+        blackMarketSection.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('password-input').value = '';
+        
+        // Hiện popup ma quái thay vì alert
+        const popup = document.getElementById('black-market-popup');
+        popup.style.display = 'flex';
+        
+    } else {
+        document.getElementById('password-input').value = '';
+    }
+}
+
+function closeBlackMarketPopup() {
+    document.getElementById('black-market-popup').style.display = 'none';
+}
+
+// Enter key để submit
+document.getElementById('password-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
+});
+
+// Xử lý chuyển đổi tab trong Black Market
+document.addEventListener('DOMContentLoaded', function() {
+    const tabItems = document.querySelectorAll('.tab-item');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabItems.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Xóa active class từ tất cả tabs và contents
+            tabItems.forEach(item => item.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Thêm active class cho tab được click và content tương ứng
+            this.classList.add('active');
+            document.getElementById(targetTab + '-content').classList.add('active');
+        });
+    });
+});
+
+// Hàm mua item - mở Discord với text có sẵn
+function buyItem(itemName, price) {
+    // Thay đổi USER_ID thành ID Discord user thực tế
+    const discordUserId = '357516312089722882';
+    
+    const message = `Xin chào! Tôi muốn mua ${itemName} với giá ${price} từ Black Market của LSRB.`;
+    
+    const discordLink = `https://discord.com/users/${discordUserId}`;
+    
+    window.open(discordLink, '_blank');
+}
