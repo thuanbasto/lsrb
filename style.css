@@ -31,7 +31,7 @@ header {
     background: rgba(0,0,0,1);
     padding: 1px 1px 1px 1px;
     text-align: center;
-    border-bottom: 4px solid #e81c5a;
+    border-bottom: 2px solid #e81c5a;
 }
 
 .gta-title, h2 {
@@ -470,7 +470,9 @@ footer {
 }
 
 .site-logo-title {
-    background-image: url("image/background-title.webp");
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url("image/background-title.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
