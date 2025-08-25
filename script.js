@@ -214,28 +214,105 @@ const identityText = `Làm thế nào để nhận biết đó là một ngườ
 document.querySelector('.identity-text p').textContent = identityText;
 
 // Kiểm tra mật mã Black Market
-function checkPassword() {
+async function checkPassword() {
     const password = document.getElementById('password-input').value;
-    const blackMarketSection = document.getElementById('black-market');
+    const passwordInput = document.getElementById('password-input');
     
-    if (password === 'lsrb-blackmarket') {
-        blackMarketSection.style.display = 'block';
-        blackMarketSection.scrollIntoView({ behavior: 'smooth' });
-        document.getElementById('password-input').value = '';
+    if (!password.trim()) {
+        showWrongPasswordPopup();
+        return;
+    }
+    
+    try {
+        // Gọi API với password
+        const response = await fetch(`https://68ac97f2b996fea1c08a597f.mockapi.io/api/blackmarket/${password}`);
         
-        // Hiện popup ma quái thay vì alert
-        const popup = document.getElementById('black-market-popup');
-        popup.style.display = 'flex';
+        if (response.ok) {
+            const data = await response.json();
+            console.log('API Response:', data);
+            
+            // Kiểm tra nếu response có chứa HTML content
+            if (data && data.length > 0 && data[0].html) {
+                const htmlContent = data[0].html;
+                
+                // Xóa section black-market cũ nếu có
+                const oldBlackMarket = document.getElementById('black-market');
+                if (oldBlackMarket) {
+                    oldBlackMarket.remove();
+                }
+                
+                // Tạo section mới từ HTML response
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = htmlContent;
+                const blackMarketSection = tempDiv.firstElementChild;
+                
+                // Chèn vào sau section media
+                const mediaSection = document.getElementById('media');
+                mediaSection.parentNode.insertBefore(blackMarketSection, mediaSection.nextSibling);
+                
+                // Scroll đến section mới
+                blackMarketSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Hiện popup chào mừng
+                const popup = document.getElementById('black-market-popup');
+                popup.style.display = 'flex';
+                
+                // Ẩn password-section sau khi thành công
+                const passwordSection = document.querySelector('.password-section');
+                if (passwordSection) {
+                    passwordSection.style.display = 'none';
+                }
+                
+            } else {
+                // Password không đúng
+                showWrongPasswordPopup();
+            }
+        } else {
+            // API error
+            showWrongPasswordPopup();
+        }
         
-    } else {
-        document.getElementById('password-input').value = '';
+    } catch (error) {
+        console.error('Error calling API:', error);
+        showWrongPasswordPopup();
+    }
+    
+    // Xóa input
+    passwordInput.value = '';
+}
+
+function showWrongPasswordPopup() {
+    // Tạo popup thông báo sai mật mã
+    let wrongPasswordPopup = document.getElementById('wrong-password-popup');
+    
+    if (!wrongPasswordPopup) {
+        wrongPasswordPopup = document.createElement('div');
+        wrongPasswordPopup.id = 'wrong-password-popup';
+        wrongPasswordPopup.className = 'black-market-popup';
+        wrongPasswordPopup.innerHTML = `
+            <div class="black-market-popup-content">
+                <div class="popup-icon">❌</div>
+                <h3>SAI MẬT MÃ</h3>
+                <p>Mật mã bạn nhập không chính xác. Vui lòng thử lại.</p>
+                <button onclick="closeWrongPasswordPopup()" class="popup-close-btn">Đóng</button>
+            </div>
+        `;
+        document.body.appendChild(wrongPasswordPopup);
+    }
+    
+    wrongPasswordPopup.style.display = 'flex';
+}
+
+function closeWrongPasswordPopup() {
+    const popup = document.getElementById('wrong-password-popup');
+    if (popup) {
+        popup.style.display = 'none';
     }
 }
 
 function closeBlackMarketPopup() {
     document.getElementById('black-market-popup').style.display = 'none';
 }
-
 // Enter key để submit
 document.getElementById('password-input').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {

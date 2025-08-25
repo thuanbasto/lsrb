@@ -447,7 +447,6 @@ footer {
     background: #c41a6b;
 }
 .hidden-section {
-    display: none;
     background: rgba(34, 40, 49, 0.95);
     border-radius: 16px;
     margin: 32px auto;
