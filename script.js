@@ -33,28 +33,33 @@ const members = [
         role: 'Thành viên',
         img: 'image/Niko Bellic.jfif',
         desc: 'Thuan Scu là một cựu binh đến từ Đông Âu, nổi tiếng với sự lạnh lùng và quyết đoán trong thế giới ngầm Liberty City.',
-        color: '#2ecc40' // xanh lá
+        color: '#2ecc40', // xanh lá
+        gif: 'image/logo-gif.gif',
+        video: ''
     },
     {
         name: 'Thai Thanh',
         role: 'Thủ lĩnh',
         img: 'image/Michael.jfif',
         desc: 'Thai Thanh là một cựu tội phạm chuyên nghiệp, sống cuộc đời giàu sang nhưng đầy mâu thuẫn nội tâm. Anh là người lên kế hoạch cho các phi vụ lớn.',
-        color: '#0099ff' // xanh dương
+        color: '#0099ff', // xanh dương
+        gif: 'image/logo-gif.gif'
     },
     {
         name: 'Slim Grimes',
         role: 'Thành viên',
         img: 'image/Tommy Vercetti.jfif',
         desc: 'Slim Grimes là ông trùm khét tiếng của Vice City, thông minh, tàn nhẫn và đầy tham vọng.',
-        color: '#ffe033' // vàng
+        color: '#ffe033', // vàng
+        gif: 'image/logo-gif.gif'
     },
     {
         name: 'Jerry Nguyen',
         role: 'Thành viên',
         img: 'image/Digital.jfif',
         desc: 'Jerry Nguyen là chuyên gia công nghệ, hacker tài ba, luôn hỗ trợ nhóm trong các phi vụ hiện đại.',
-        color: '#a259f7' // tím
+        color: '#a259f7', // tím
+        gif: 'image/logo-gif.gif'
     }
 ];
 
@@ -66,12 +71,23 @@ members.forEach((member, idx) => {
     //card.style.background = member.color;
     card.innerHTML = `
         <div class="member-img-wrap">
-            <img src="${member.img}" alt="${member.name}">
+            <img class="member-img" src="${member.img}" alt="${member.name}">
         </div>
         <h3>${member.name}</h3>
         <p><strong>${member.role}</strong></p>
     `;
-    card.addEventListener('click', () => showMemberPopup(idx));
+    // Lấy phần tử <img>
+    const imgEl = card.querySelector(".member-img");
+    console.log(imgEl);
+    // Hover vào card → đổi sang GIF
+    card.addEventListener("mouseenter", () => {
+        if (member.gif) {
+            imgEl.src = member.gif;
+        }
+    });
+    card.addEventListener("mouseleave", () => {
+        imgEl.src = member.img;
+    });
     memberList.appendChild(card);
 });
 
