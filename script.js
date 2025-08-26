@@ -263,6 +263,7 @@ async function checkPassword() {
                     passwordSection.style.display = 'none';
                 }
                 
+                addActiveTabBlackMarket();
             } else {
                 // Password không đúng
                 showWrongPasswordPopup();
@@ -321,7 +322,7 @@ document.getElementById('password-input').addEventListener('keypress', function(
 });
 
 // Xử lý chuyển đổi tab trong Black Market
-document.addEventListener('DOMContentLoaded', function() {
+function addActiveTabBlackMarket() {
     const tabItems = document.querySelectorAll('.tab-item');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -338,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(targetTab + '-content').classList.add('active');
         });
     });
-});
+}
 
 // Hàm mua item - mở Discord với text có sẵn
 function buyItem() {
